@@ -1,20 +1,19 @@
-int _putchar(char c);
-int _islower(int c);
-int _isalpha(int c);
-int _abs(int n);
-int _isupper(int c);
-int _isdigit(int c);
-int _strlen(char *s);
-void _puts(char *s);
-char *_strcpy(char *dest, char *src);
-int _atoi(char *s);
-char *_strcat(char *dest, char *src);
-char *_strncat(char *dest, char *src, int n);
-char *_strncpy(char *dest, char *src, int n);
-int _strcmp(char *s1, char *s2);
-char *_memset(char *s, char b, unsigned int n);
-char *_memcpy(char *dest, char *src, unsigned int n);
-char *_strchr(char *s, char c);
-unsigned int _strspn(char *s, char *accept);
-char *_strpbrk(char *s, char *accept);
-char *_strstr(char *haystack, char *needle);
+5-strstr.o:                                     0000000000000000 T _strstr                      
+6-abs.o:
+0000000000000000 T _abs
+
+9-strcpy.o:
+0000000000000000 T _strcpy
+
+_putchar.o:
+0000000000000000 T _putchar
+                 U write
+#include "main.h"
+                                                int main(void)
+{
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+    return (0);
+}
+julien@ubuntu:~/0x09. Static Librairies$ gcc -std=gnu89 main.c -L. -lmy -o quote                julien@ubuntu:~/0x09. Static Librairies$ ./quote
+"At the end of the day, my goal was to be the best hacker"
+    - Kevin Mitnick
