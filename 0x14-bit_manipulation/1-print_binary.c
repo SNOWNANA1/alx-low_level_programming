@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -6,33 +7,23 @@
  */
 void print_binary(unsigned long int n)
 {
-    unsigned long int temp;
-    int shifts;
+	unsigned long int temp;
+	int shifts;
 
-    if (n == 0)
-    {
-        printf("0");
-        return;
-    }
+	if (n == 0)
+	{
+		printf("0");
+		return;
+	}
 
-    for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
-        ;
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
+		;
 
-    for (; shifts >= 0; shifts--)
-    {
-        if ((n >> shifts) & 1)
-            printf("1");
-        else
-            printf("0");
-    }
-}
-
-int main(void)
-{
-    unsigned long int num = 42; // Example decimal number
-    printf("Binary representation of %lu is: ", num);
-    print_binary(num);
-    printf("\n");
-
-    return 0;
+	for (; shifts >= 0; shifts--)
+	{
+		if ((n >> shifts) & 1)
+			printf("1");
+		else
+			printf("0");
+	}
 }
